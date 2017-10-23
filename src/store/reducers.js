@@ -25,3 +25,25 @@ export const errors = (state = [], action) => {
     return state;
   }
 };
+
+export const allSkiDays = (state = [], action) => {
+  switch(action.type) {
+  // Composing reducers. Using reducer skiDay to add new one into collection
+  // first parameter of reducer expecting state which we dont have so will put just a null
+  // Its important to give it same action so it will trigger
+  case C.ADD_DAY:
+  const hasDayAlready = state.some(skiDay => skiDay.date === action.payload.date);
+    return (hasDayAlready) ?
+      state :
+      [
+        ...state,
+        skiDay(null, action)
+      ];
+
+  case C.REMOVE_DAY:
+    return state.filter(skiDay => skiDay.date !== action.payload);
+
+  default:
+    return state;
+  }
+};
