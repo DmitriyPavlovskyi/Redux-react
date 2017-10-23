@@ -6,14 +6,12 @@ let state = initialState;
 
 console.log(`
 
-    Initial state
-    =============
-
-
-    goal: ${state.goal}
-    resorts: ${JSON.stringify(state.allSkiDays)}
-    fetching: ${state.resortNames.fetching}
-    suggestions: ${state.resortNames.suggestions}
+	Initial state
+	=============
+	goal: ${state.goal}
+	resorts: ${JSON.stringify(state.allSkiDays)}
+	fetching: ${state.resortNames.fetching}
+	suggestions: ${state.resortNames.suggestions}
 
 `);
 
@@ -39,13 +37,11 @@ state = appReducer(state, {
 
 console.log(`
 
-    Next state
-    =============
-
-
-    goal: ${state.goal}
-    resorts: ${JSON.stringify(state.allSkiDays)}
-    fetching: ${state.resortNames.fetching}
-    suggestions: ${state.resortNames.suggestions}
+	Next state
+	=============
+	goal: ${state.goal}
+	resorts: ${JSON.stringify(state.allSkiDays)}
+	fetching: ${state.resortNames.fetching}
+	suggestions: ${state.resortNames.suggestions}
 
 `);

@@ -4,26 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node ./src/",
-    "challenge-a": "babel-node ./src/challenges/FETCH_RESORT_NAMES.js",
-    "challenge-b": "babel-node ./src/challenges/CANCEL_FETCHING.js",
-    "challenge-c": "babel-node ./src/challenges/CLEAR_SUGGESTIONS.js",
-    "challenge-d": "babel-node ./src/challenges/CHANGE_SUGGESTIONS.js"
+    "start": "./node_modules/.bin/webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "redux": "^3.7.2"
+    "redux": "^3.6.0"
   },
   "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.6",
+    "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.4.1",
     "eslint-config-google": "^0.9.1",
-    "eslint-plugin-react": "^7.1.0",
-    "expect": "^1.20.2"
+    "eslint-plugin-react": "^7.1.0"
   }
 }
