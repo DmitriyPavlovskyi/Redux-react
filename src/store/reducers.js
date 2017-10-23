@@ -1,4 +1,5 @@
 import C from '../constants';
+import { combineReducers } from 'redux';
 
 export const goal = (state = 10, action) =>
   (action.type === C.SET_GOAL) ?
@@ -72,3 +73,14 @@ export const suggestions = (state = [], action) => {
   default: return state;
   }
 };
+
+// Resort names using two reducers so we need to combine them first to pass it to a single reducer object
+export default combineReducers({
+  allSkiDays,
+  goal,
+  errors,
+  resortNames: combineReducers({
+    fetching,
+    suggestions
+  })
+});
