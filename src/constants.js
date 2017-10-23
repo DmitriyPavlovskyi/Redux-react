@@ -8,6 +8,6 @@ const constants = {
   CANCEL_FETCHING: 'CANCEL_FETCHING',
   CHANGE_SUGGESTIONS: 'CHANGE_SUGGESTIONS',
   CLEAR_SUGGESTIONS: 'CLEAR_SUGGESTIONS'
-}
+};
 
 export default constants;
