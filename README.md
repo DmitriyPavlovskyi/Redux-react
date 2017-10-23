@@ -1,2 +1,2 @@
 # Redux-react
-React + Redux
+Creating Ski day App using React + Redux
