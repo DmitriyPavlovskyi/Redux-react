@@ -1,8 +1,8 @@
 import storeFactory from './store';
-import { randomGoals } from './actions';
+import { suggestResortNames } from './actions';
 
 const store = storeFactory();
 
 store.dispatch(
-  randomGoals()
+  suggestResortNames('hea')
 );

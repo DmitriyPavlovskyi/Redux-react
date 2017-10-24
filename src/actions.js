@@ -1,4 +1,5 @@
 import C from './constants';
+import fetch from 'isomorphic-fetch';
 
 export function addDay(resort, date, powder = false, backcountry = false) {
   return {
@@ -43,17 +44,26 @@ export const clearSuggestions = () =>
     type: C.CLEAR_SUGGESTIONS
   });
 
-// thunk needed to dispatch several actions at the same time
-export const randomGoals = () => (dispatch, getState) => {
-  if (!getState().resortNames.fetching) {
-    dispatch({
-      type: C.FETCH_RESORT_NAMES
-    });
+export const suggestResortNames = value => dispatch => {
+  dispatch({
+    type: C.FETCH_RESORT_NAMES
+  });
 
-    setTimeout(() => {
+  fetch('http://localhost:3333/resorts/' + value)
+    .then(response => response.json())
+    .then(suggestions => {
+      dispatch({
+        type: C.CHANGE_SUGGESTIONS,
+        payload: suggestions
+      });
+    })
+    .catch(error => {
+      dispatch(
+        addError(error.message)
+      );
+
       dispatch({
         type: C.CANCEL_FETCHING
       });
-    }, 1500);
-  }
+    });
 };
