@@ -42,3 +42,18 @@ export const clearSuggestions = () =>
   ({
     type: C.CLEAR_SUGGESTIONS
   });
+
+// thunk needed to dispatch several actions at the same time
+export const randomGoals = () => (dispatch, getState) => {
+  if (!getState().resortNames.fetching) {
+    dispatch({
+      type: C.FETCH_RESORT_NAMES
+    });
+
+    setTimeout(() => {
+      dispatch({
+        type: C.CANCEL_FETCHING
+      });
+    }, 1500);
+  }
+};
